@@ -5,7 +5,6 @@ from dajax.core import Dajax
 def myexample(request):
     return simplejson.dumps({'message':'Hello World'})
 
-
 def showalert(request):
 	dajax = Dajax()
 	#dajax.alert("foo")
