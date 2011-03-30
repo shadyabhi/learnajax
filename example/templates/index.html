@@ -1,0 +1,28 @@
+{% load dajaxice_templatetags %}
+
+<html>
+	<head>
+		<title>My Ajax attempt</title>
+		<script language="JavaScript" type="text/javascript" src="/learnajax/jquery.js"></script>
+		{% dajaxice_js_import %}
+		<script src="/learnajax/jquery.dajax.core.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			function my_callback(data){
+			if(data==Dajaxice.EXCEPTION){
+				alert('Error! Something happens!');
+			    }
+				else{
+					alert(data.message);
+				}
+			}
+			function alertshow(){
+				 Dajaxice.example.showalert(Dajax.process)
+				 }
+		</script>
+	</head>
+	<body>
+		<input type="button" name="rand" value="Get message from server!" id="rand" onclick="Dajaxice.example.myexample(my_callback)">	
+		<input type="button" name="rand" value="Show alert!" id="rand" onclick="alertshow()">	
+
+	</body>
+</html>
